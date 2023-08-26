@@ -60,6 +60,7 @@ body {
   transform: translateX(-100%);
   background-color: lightgray;
   opacity: 0;
+  width: 250px; /* Adjust the width as needed */
 }
 
 /* Add this style to make the navigation menu visible */
@@ -161,9 +162,35 @@ body {
   animation-duration: 1.5s;
 }
 
-.Guy {
-  max-width: 50%; /* Make each image take up half of the row */
-  height: auto; /* Maintain aspect ratio */
+.image-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-top: 20px; /* Add some margin */
+}
+
+.stdpicture-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: row; /* Stack images and subtext vertically */
+  margin-top: 20px; /* Add some margin */
+}
+
+.stdpicture-subcontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Center horizontally */
+  margin-bottom: 20px; /* Add spacing between images */
+}
+
+.subtext {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-top: 10px; /* Add spacing between image and subtext */
+  font-size: 14px; /* Adjust font size */
 }
 
 @keyframes fade {
