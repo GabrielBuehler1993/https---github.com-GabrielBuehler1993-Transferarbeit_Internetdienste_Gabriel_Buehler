@@ -45,7 +45,13 @@ h3 {
   padding-bottom: 0px;
   margin-bottom: 0px;
 }
-
+.bold-text{
+  font-family: Tangerine-Bold;
+  font-size: 30px;
+}
+p{
+  font-size: 25px;
+}
 .link-font{
   color: white;
   font-size: 30px;
@@ -236,3 +242,80 @@ h3 {
 }
 
 
+/* Mobile Formatting */
+/* Adjustments for mobile devices */
+@media screen and (max-width: 1440px) {
+  body {
+    background-size: cover; /* Adjust background size for smaller screens */
+  }
+
+  .title {
+    font-size: 60px; /* Adjust title font size */
+  }
+
+  .link-font {
+    font-size: 36px; /* Adjust link font size */
+  }
+
+  .burger-button {
+    position: fixed; /* Keep the burger button fixed on the screen */
+    top: 20px; /* Adjust the top position */
+    right: 20px; /* Adjust the right position */
+    z-index: 1000; /* Ensure the button is above other content */
+  }
+
+  .burger-line {
+    height: 3px; /* Adjust burger line thickness */
+  }
+
+  .navigation {
+    width: 25%; /* Full width for navigation on mobile */
+    transform: translateX(-100%);
+    opacity: 1; /* Show navigation by default */
+    background-image: url("./Images/wood_background.jpg"); /* Remove background image for navigation */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+  }
+
+  .navigation.active {
+    transform: translateX(0);
+  }
+
+  .main-content {
+    padding: 20px; /* Adjust padding for content */
+  }
+
+  .slideshow-container {
+    max-width: 500px; /* Adjust max width for slideshow */
+  }
+
+  .slideshowtext {
+    font-size: 18px; /* Adjust slideshow text font size */
+    padding: 10px; /* Adjust padding */
+  }
+
+  .numbertext {
+    font-size: 14px; /* Adjust number text font size */
+    padding: 6px 8px; /* Adjust padding */
+  }
+
+  .prev,
+  .next {
+    font-size: 20px; /* Adjust button font size */
+    padding: 12px; /* Adjust button padding */
+  }
+
+  .dot {
+    height: 12px; /* Adjust dot size */
+    width: 12px;
+    margin: 0 4px;
+  }
+
+  .adress-Banner {
+    width: 100%; /* Full width for address banner on mobile */
+  }
+}

@@ -31,3 +31,23 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+
+$('.testi.owl-carousel').owlCarousel({
+    items: 2,
+    margin:10,
+    lazyLoad: true,
+    dots:true,
+    autoPlay: true,
+    autoPlayTimeout: 3000,
+    responsive:{
+      0:{
+        items:1,
+      },
+      600:{
+        items:2,
+      },
+      1000:{
+        items:2,
+      }
+    }
+  });
