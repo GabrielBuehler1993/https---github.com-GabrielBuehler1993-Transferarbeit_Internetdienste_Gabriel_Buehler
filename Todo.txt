@@ -1,0 +1,41 @@
+Todo:
+
+Sonntag:
+
+	- Customer Reviews Seite erstellen
+	- Texte reinschreiben
+	- Bilderunterschrift machen
+
+Montag:
+
+	- Meta-Tags einbauen
+	- Keywords
+	- Smartphoneseitendesign
+	- W3C Validator
+
+Dienstag:
+- Doku:
+	-  alle Wireframes überarbeiten, 
+	- Sitemap
+
+Mittwoch:
+	- Zielgruppen anpassen
+	- Meta-Tags erklären
+	- Keywords erklären
+  - Backend
+
+	- Kontaktformular verknüpfen
+	- Bestellformular verknüpfen
+
+
+Donnerstag:
+
+	- Validierung der eingegebenen Daten
+	- Seite vom Internet aufrufbar
+	- Evtl: E-Mail versenden im Hintergrund https://mailtrap.io/blog/javascript-send-email/
+
+Freitag:
+
+Samstag:
+
+Sonntag:
