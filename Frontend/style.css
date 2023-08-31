@@ -45,9 +45,9 @@ h3 {
   padding-bottom: 0px;
   margin-bottom: 0px;
 }
-.bold-text{
+b{
   font-family: Tangerine-Bold;
-  font-size: 30px;
+  font-size: 60px;
 }
 p{
   font-size: 25px;
@@ -217,24 +217,24 @@ p{
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   flex-direction: row; /* Stack images and subtext vertically */
-  margin-top: 20px; /* Add some margin */
+  margin: 20px; /* Add some margin */
 }
+
 
 .stdpicture-subcontainer {
   display: flex;
-  flex-direction: row;
-  align-items: center; /* Center horizontally */
-  margin-bottom: 20px; /* Add spacing between images */
+  flex-direction: column; /* Change flex-direction to column */
+  align-items: center;
+  margin: 20px; /* Add some margin */
 }
 
-.subtext {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  margin-top: 10px; /* Add spacing between image and subtext */
-  font-size: 14px; /* Adjust font size */
+.picture-subtext {
+  font-family: tangerine-bold;
+  font-size: 50px;
+  margin-top: 10px; /* Adjust spacing between image and subtext */
+ 
 }
+
 
 .adress-Banner{
   border-top:10px solid  #412d07;

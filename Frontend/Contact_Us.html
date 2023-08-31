@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="about us, dice creators, dice sets, tabletop RPG, D20, D&D, Pathfinder, handcrafted dice, premium dice, gaming experience, buy dice">
+  <meta name="author" content="Ebenezer_Gilbert">
+  <meta name="keywords" content="contact us, dice sets, tabletop RPG, D20, D&D, Pathfinder, handcrafted dice, premium dice, gaming experience, buy dice">
   <link rel="stylesheet" href="buyform_style.css">
   <script src="frontendScript.js" defer></script>
+  <script src="../Backend/connector.js"></script>
   <title>D20 Shop</title>
 </head>
 <body>
@@ -22,7 +26,7 @@
             <ul>
               <li><a href="./Home.html" class="link-font">Home</a></li>
               <li><a href="./About_us.html" class="link-font">About us</a></li>
-              <li><a href="./Our_Dices.html" class="link-font">Our Dices</a></li>
+              <li><a href="./Our_Dice.html" class="link-font">Our Dices</a></li>
               <li><a href="./Buy_Now.html" class="link-font">Buy now</a></li>
               <li><a href="./Contact_Us.html" class="link-font">Contact us</a></li>
               <li><a href="./Customer_Reviews.html" class="link-font">Customer Reviews</a></li>
@@ -34,16 +38,16 @@
 <div class="backgroundrow">
   <div class="col-75">
     <div class="container">
-      <form action="/action_page.php">
+      <form onsubmit="postUser" id="userForm">
       
         <div class="row">
           <div class="col-50">
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <input type="text" id="name" name="full name" placeholder="John M. Doe">
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
             <input type="text" id="email" name="email" placeholder="john@example.com">
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <input type="text" id="address" name="address" placeholder="542 W. 15th Street">
             <label for="city"><i class="fa fa-institution"></i> City</label>
             <input type="text" id="city" name="city" placeholder="New York">
 
@@ -53,8 +57,8 @@
                 <input type="text" id="state" name="state" placeholder="NY">
               </div>
               <div class="col-50">
-                <label for="Message">Message</label>
-                <textarea name="message" rows="10" cols="30" placeholder="Your Message here...">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="10" cols="30" placeholder="Your Message here...">
                     </textarea> 
               </div>
             </div>
@@ -64,6 +68,7 @@
         <div>
         </div>
       </form>
+      <ul id=""usersList"></ul>
     </div>
   </div>
   
@@ -74,11 +79,11 @@
     <p>  Schaffhauserstrasse 411</p>
     <p>  8050 Zuerich</p>
     <br>
-    <p>  &#9993 info@d20shop.com</p>
+    <p>  &#9993; info@d20shop.com</p>
     <p>  +41 79 123 45 67</p>
-    </footer>
+  </footer>
+</main>
 </div>
 
-       </main>
-  </body>
+</body>
 </html>
