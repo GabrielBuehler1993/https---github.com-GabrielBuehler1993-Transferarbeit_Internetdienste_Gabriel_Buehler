@@ -86,6 +86,21 @@ app.post("/contactForm_data", async (req, res) => {
   }
 });
 
+// Define a route to handle Buy Form submissions
+app.post("/buyForm_data", async (req, res) => {
+  try {
+    // Handle the Buy Form data here and save it to your database
+    const formData = req.body; // This will contain the form data
+    // You can process and save the Buy Form data to your database here
+
+    // Send a response back to the frontend (for example, a success message)
+    res.status(200).json({ message: "Buy Form data received and processed successfully" });
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).json({ error: "An error occurred while processing the Buy Form data" });
+  }
+});
+
 // Start the Express app and listen on the specified port
 const port = process.env.PORT || 3000;
 app.listen(port, () => {

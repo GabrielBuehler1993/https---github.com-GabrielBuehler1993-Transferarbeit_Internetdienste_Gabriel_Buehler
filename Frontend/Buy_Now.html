@@ -13,6 +13,7 @@
   <script src="../backend/connector.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <title>D20 Shop</title>
 </head>
 <body>
@@ -82,7 +83,7 @@
         <label>
           <input type="checkbox" checked="checked" name="diceBagCheckbox" id="diceBagCheckbox">  Dice Bag (50.00$)
         </label>
-        <input type="submit" value="Buy" class="button">
+        <input onclick="SendMail()" type="submit" value="Buy" class="button">
       </form>
       <div id="buyMessage" class="buyMessage">
         Thank you for your order, we will reach out to you!
