@@ -11,6 +11,11 @@
 * {
     box-sizing: border-box;
   }
+  .element {
+    transform: scale(1);
+    transform-origin: 0 0;
+  }
+  
   h1{
     font-family: Tangerine-Bold;
     font-size: 50px;
@@ -234,6 +239,12 @@
   }
   /*Message that Pops up when ordering an item*/
 .buyMessage{
+  display: none; 
+  font-family: Tangerine-Bold;
+  font-size: 50px;
+  color:#68470b
+}
+.contactMessage{
   display: none; 
   font-family: Tangerine-Bold;
   font-size: 50px;

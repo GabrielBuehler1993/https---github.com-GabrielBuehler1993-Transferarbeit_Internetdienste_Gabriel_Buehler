@@ -12,8 +12,6 @@ services:
     ports:
       - 27017:27017
 
-
-  
   second_mongo:
     image: mongo:latest
     container_name: buy_mongo_container

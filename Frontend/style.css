@@ -11,7 +11,10 @@
   src: url(./Fonts/Tangerine-Regular.ttf);
 }
 
-
+.element {
+  transform: scale(1);
+  transform-origin: 0 0;
+}
 
 body {
   margin: 0;
@@ -52,12 +55,7 @@ b{
 p{
   font-size: 25px;
 }
-.contactMessage{
-  display: none; 
-  font-family: Tangerine-Bold;
-  font-size: 50px;
-  color:#68470b
-}
+
 .link-font{
   color: white;
   font-size: 30px;
