@@ -9,10 +9,10 @@ COPY Frontend/buyform_style.css /usr/share/nginx/html
 COPY Frontend/buyform_style.css /usr/share/nginx/html
 
 # Copy images to the Nginx web server directory
-COPY Frontend/images/ /usr/share/nginx/html/images/
+COPY Frontend/Images/ /usr/share/nginx/html/images/
 
 # Copy fonts to the Nginx web server directory
-COPY Frontend/fonts/ /usr/share/nginx/html/fonts/
+COPY Frontend/Fonts/ /usr/share/nginx/html/fonts/
 
 # Expose port 80 for serving web content
 EXPOSE 80
