@@ -1,0 +1,18 @@
+# Use an official Nginx image as a parent image
+FROM nginx:latest
+
+# Copy frontend files to the default Nginx web server directory
+COPY frontend/ /usr/share/nginx/html
+
+# Copy  CSS file to the Nginx web server directory
+COPY frontend/buyform_style.css /usr/share/nginx/html
+COPY frontend/buyform_style.css /usr/share/nginx/html
+
+# Copy images to the Nginx web server directory
+COPY frontend/images/ /usr/share/nginx/html/images/
+
+# Copy fonts to the Nginx web server directory
+COPY frontend/fonts/ /usr/share/nginx/html/fonts/
+
+# Expose port 80 for serving web content
+EXPOSE 80

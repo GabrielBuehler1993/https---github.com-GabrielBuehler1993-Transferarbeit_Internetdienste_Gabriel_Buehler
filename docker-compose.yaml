@@ -23,6 +23,27 @@ services:
     ports:
       - 27018:27017
 
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: backend_container
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo
+      - second_mongo
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: frontend_container
+    ports:
+      - 80:80
+    depends_on:
+      - backend
+
 volumes:
   contact_mongo_data:
   buy_mongo_data:
