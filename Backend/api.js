@@ -23,6 +23,9 @@ mongoose.createConnection(buyDBConnection, {
   useUnifiedTopology: true,
 });
 
+
+
+
 // Define a schema for user data
 const UserSchema = new mongoose.Schema({
   id: Number,
@@ -45,9 +48,10 @@ const buyFormSchema = new mongoose.Schema({
   Country: String,
   Selection: String,
 });
+const User = mongoose.model("User", UserSchema, 'userCollection');
+const BuyForm = mongoose.model("BuyForm", buyFormSchema, 'buyFormCollection');
 
-// Create a model based on the user schema
-const User = mongoose.model("User", UserSchema);
+
 
 // Enable JSON parsing middleware for incoming requests
 app.use(express.json());
@@ -103,6 +107,8 @@ app.delete("/users/:id", async (req, res) => {
 
 // Handle data from the buy form
 app.post("/buyForm_data", async (req, res) => {
+    // Log the request body to see if data is received
+    console.log("Received data:", req.body);
   // Handle the data from the buy form here
   const formData = req.body;
   // Process and save the data as needed
