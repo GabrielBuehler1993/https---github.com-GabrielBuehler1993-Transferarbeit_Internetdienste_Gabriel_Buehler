@@ -14,24 +14,42 @@ const getUsers = async () => {
   }
 };
 
+const response = await fetch("http://localhost:3000/second_form_data", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(secondFormData),
+  });
+
+  
+
 const postUser = async () => {
     document.getElementById("userForm").style.display = "none";
     document.getElementById("message").innerText = "Thank you for contacting us, we will reach out to you!";
   };
+
+  const postOrder = async () => {
+    document.getElementById("buyForm").style.display = "none";
+    document.getElementById("buyMessage").innerText = "Thank you for your order, we will reach out to you!";
+  };
+
   
   document.addEventListener("DOMContentLoaded", () => {
-    const userForm = document.getElementById("userForm");
-    userForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      postUser();
-    });
-  });
-  
-document.addEventListener("DOMContentLoaded", () => {
-  const userForm = document.getElementById("userForm");
-  userForm.addEventListener("submit", (e) => {
+  // First Form Handling
+  const firstForm = document.getElementById("userForm");
+  firstForm.addEventListener("submit", (e) => {
     e.preventDefault();
     postUser();
   });
+
+  // Second Form Handling
+  const secondForm = document.getElementById("buyForm");
+  secondForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    postSecondFormData(); // Create a new function for this
+  });
 });
+
+
 

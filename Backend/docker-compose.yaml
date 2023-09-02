@@ -3,14 +3,28 @@ version: '3.8'
 services:
   mongo:
     image: mongo:latest
-    container_name: mongo_container
+    container_name: contact_mongo_container
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
     volumes:
-      - mongo_data:/data/db
+      - contact_mongo_data:/data/db
     ports:
       - 27017:27017
 
+
+  
+  second_mongo:
+    image: mongo:latest
+    container_name: buy_mongo_container
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - buy_mongo_data:/data/db
+    ports:
+      - 27018:27017
+
 volumes:
-  mongo_data:
+  contact_mongo_data:
+  buy_mongo_data:

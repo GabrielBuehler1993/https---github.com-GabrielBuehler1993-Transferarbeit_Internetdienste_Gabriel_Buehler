@@ -2,18 +2,41 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 
-const mongoDBConnection =
-  process.env.MONGODB_CONNECTION ||
-  "mongodb://root:example@localhost:27017/?authMechanism=DEFAULT";
-mongoose.connect(mongoDBConnection, {
+const contactDBConnection =
+  process.env.FIRST_DB_CONNECTION ||
+  "mongodb://root:example@localhost:27017/firstdb?authMechanism=DEFAULT";
+mongoose.connect(contactDBConnection, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const buyDBConnection =
+  process.env.SECOND_DB_CONNECTION ||
+  "mongodb://root:example@localhost:27018/seconddb?authMechanism=DEFAULT";
+mongoose.createConnection(buyDBConnection, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
 const UserSchema = new mongoose.Schema({
   id: Number,
-  username: String,
-  active: Boolean,
+  fullName: String,
+  Email: String,
+  Address: String,
+  City: String,
+  State: String,
+  Message: String,
+});
+
+const buyFormSchema = new mongoose.Schema({
+  id: Number,
+  Email: String,
+  Address: String,
+  City: String,
+  State: String,
+  Zip: String,
+  Country: String,
+  Selection: String,
 });
 
 const User = mongoose.model("User", UserSchema);
