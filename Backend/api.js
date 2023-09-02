@@ -1,10 +1,12 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-
+const cors = require('cors');
+const app = express(); // Create the express app instance
+app.use(cors()); 
 const contactDBConnection =
   process.env.FIRST_DB_CONNECTION ||
-  "mongodb://root:example@localhost:27017/firstdb?authMechanism=DEFAULT";
+  "mongodb://root:example@localhost:27017/";
 mongoose.connect(contactDBConnection, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -12,7 +14,7 @@ mongoose.connect(contactDBConnection, {
 
 const buyDBConnection =
   process.env.SECOND_DB_CONNECTION ||
-  "mongodb://root:example@localhost:27018/seconddb?authMechanism=DEFAULT";
+  "mongodb://root:example@localhost:27018/";
 mongoose.createConnection(buyDBConnection, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -41,7 +43,7 @@ const buyFormSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", UserSchema);
 
-const app = express();
+/*const app = express(); */
 app.use(express.json());
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -84,5 +86,15 @@ app.delete("/users/:id", async (req, res) => {
   return res.status(204).send();
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
+app.post("/buyForm_data", async (req, res) => {
+  // Handle the data from the buy form here
+  const formData = req.body;
+  // Process and save the data as needed
+  // Respond with an appropriate status code
+  return res.status(200).send("Data received successfully");
+});
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`D20 system is running on port ${port}`);
+});

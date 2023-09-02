@@ -38,27 +38,27 @@
 <div class="backgroundrow">
   <div class="col-75">
     <div class="container">
-      <form onsubmit="postUser()" id="userForm">
-      
+      <form onsubmit="return postContact();" id="contactForm">
+
         <div class="row">
           <div class="col-50">
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="name" name="full name" placeholder="John M. Doe">
+            <input type="text" id="name" name="full name" placeholder="John M. Doe" required>
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <input type="text" id="email" name="email" placeholder="john@example.com" required>
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="address" name="address" placeholder="542 W. 15th Street">
+            <input type="text" id="address" name="address" placeholder="542 W. 15th Street" required>
             <label for="city"><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="New York">
+            <input type="text" id="city" name="city" placeholder="New York" required>
 
             <div class="row">
               <div class="col-50">
                 <label for="state">State</label>
-                <input type="text" id="state" name="state" placeholder="NY">
+                <input type="text" id="state" name="state" placeholder="NY" required> 
               </div>
               <div class="col-50">
                 <label for="message">Message</label>
-                <textarea id="message" name="message" rows="10" cols="30" placeholder="Your Message here...">
+                <textarea id="message" name="message" rows="10" cols="30" placeholder="Your Message here..." required>
                     </textarea> 
               </div>
             </div>
@@ -68,7 +68,9 @@
         <div>
         </div>
       </form>
-      <ul id=""usersList"></ul>
+      <div id="contactMessage" class="contactMessage">
+        Thank you for contacting us, we will reach out to you!
+      </div>
     </div>
   </div>
   

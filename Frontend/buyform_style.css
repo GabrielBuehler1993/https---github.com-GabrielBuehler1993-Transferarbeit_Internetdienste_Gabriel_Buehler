@@ -232,7 +232,14 @@
     background-color: lightgray;
     /* ... (border, box-sizing, and transition) ... */
   }
-  
+  /*Message that Pops up when ordering an item*/
+.buyMessage{
+  display: none; 
+  font-family: Tangerine-Bold;
+  font-size: 50px;
+  color:#68470b
+}
+
   /* Slideshow container */
   .slideshow-container {
     max-width: 500px;

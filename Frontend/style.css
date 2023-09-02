@@ -52,12 +52,19 @@ b{
 p{
   font-size: 25px;
 }
+.contactMessage{
+  display: none; 
+  font-family: Tangerine-Bold;
+  font-size: 50px;
+  color:#68470b
+}
 .link-font{
   color: white;
   font-size: 30px;
   font-family: Tangerine;
   margin-top: 30px;
 }
+
 
 .title-bar {
   display: flex;

@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link rel="stylesheet" href="buyform_style.css">
   <script src="frontendScript.js" defer></script>
+  <script src="../backend/connector.js"></script>
   <title>D20 Shop</title>
 </head>
 <body>
@@ -34,31 +35,31 @@
 <div class="backgroundrow">
   <div class="col-75">
     <div class="container">
-      <form onsubmit="postOrder()" id="buyForm">
+      <form onsubmit="postOrder(event)" id="buyForm">
       
         <div class="row">
           <div class="col-50">
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <input type="text" id="fname" name="firstname" placeholder="John M. Doe" required>
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <input type="text" id="email" name="email" placeholder="john@example.com" required>
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street" required>
             <label for="city"><i class="fa fa-institution"></i> City</label>
-            <input type="text" id="city" name="city" placeholder="New York">
+            <input type="text" id="city" name="city" placeholder="New York" required>
 
             <div class="row">
               <div class="col-50">
                 <label for="state">State</label>
-                <input type="text" id="state" name="state" placeholder="NY">
+                <input type="text" id="state" name="state" placeholder="NY" required>
               </div>
               <div class="col-50">
                 <label for="zip">Zip</label>
-                <input type="text" id="zip" name="zip" placeholder="10001">
+                <input type="text" id="zip" name="zip" placeholder="10001" required>
               </div>
               <div class="col-50">
                 <label for="Country">Country</label>
-                <input type="text" id="Country" name="Country" placeholder="USA">
+                <input type="text" id="Country" name="Country" placeholder="USA" required>
               </div>
             </div>
           </div>
@@ -66,17 +67,21 @@
           
         </div>
         <label>
-          <input type="checkbox" checked="checked" name="sameadr"> Wood  (150.00$)
+          
+          <input type="checkbox" checked="checked" name="woodCheckbox" id="woodCheckbox"> Wood  (150.00$)
         </label>
         <label>
-          <input type="checkbox" checked="checked" name="sameadr"> Metal  Dice (200.00$)
+          <input type="checkbox" checked="checked" name="metalDiceCheckbox" id="metalDiceCheckbox">  Metal  Dice (200.00$)
           </label>
         <label>
-          <input type="checkbox" checked="checked" name="sameadr"> Dice Bag (50.00$)
+          <input type="checkbox" checked="checked" name="diceBagCheckbox" id="diceBagCheckbox">  Dice Bag (50.00$)
         </label>
         <input type="submit" value="Buy" class="button">
       </form>
-    
+      <div id="buyMessage" class="buyMessage">
+        Thank you for your order, we will reach out to you!
+      </div>
+      
     </div>
     </div>
  
@@ -92,6 +97,5 @@
     </div>
   </main>
 </div>
-
 </body>
 </html>
