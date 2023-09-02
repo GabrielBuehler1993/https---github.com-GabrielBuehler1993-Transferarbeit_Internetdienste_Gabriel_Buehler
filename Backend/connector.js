@@ -29,6 +29,42 @@ const postContact = async () => {
   contactMessage.innerText = "Thank you for contacting us, we will reach out to you!";
   contactMessage.style.display = "block";
 
+  // Create FormData from the contact form
+  const formData = new FormData(contactForm);
+
+  // Extract form fields
+  const fullName = formData.get("full name");
+  const email = formData.get("email");
+  const address = formData.get("address");
+  const city = formData.get("city");
+  const state = formData.get("state");
+  const message = formData.get("message");
+
+  try {
+    const response = await fetch("http://localhost:3000/contactForm_data", {
+      method: "POST",
+      body: JSON.stringify({
+        fullName,
+        email,
+        address,
+        city,
+        state,
+        message,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (response.ok) {
+      // Handle a successful response from the backend, if needed
+    } else {
+      console.error("Error sending data to the backend.");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+  }
+
   return false; // Prevent default form submission
 };
 
@@ -108,7 +144,6 @@ const postOrder = async (e) => {
     console.error("Error:", error);
   }
   console.log('Form submitted') 
-
 };
 
 // Event listener for DOMContentLoaded to set up form handling
@@ -135,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const contactMessage = document.getElementById("contactMessage");
 
       // Show the message
-      contactMessage.style.display = "contactMessage";
+      contactMessage.style.display = "block";
 
       // Optionally, you can reset the form after displaying the message
       contactForm.reset();

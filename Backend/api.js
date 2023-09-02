@@ -71,29 +71,23 @@ app.get("/users", async (req, res) => {
 
 // ... other routes ...
 
-// Insert test data inside an async function
-async function insertTestData() {
-  // Insert a test user
-  
-  // Insert a test buy form
-  const testBuyForm = new BuyForm({
-    id: 1,
-    Email: "test@example.com",
-    Address: "456 Elm St",
-    City: "Los Angeles",
-    State: "CA",
-    Zip: "12345",
-    Country: "USA",
-    Selection: "Test selection",
-  });
-  await testBuyForm.save();
-}
+// Define a route to handle contact form submissions
+app.post("/contactForm_data", async (req, res) => {
+  try {
+    // Handle the form data here and save it to your database
+    const formData = req.body; // This will contain the form data
+    // You can process and save the form data to your database here
 
-// Insert test data when the application starts
-insertTestData().then(() => {
-  // Start the Express app and listen on the specified port
-  const port = process.env.PORT || 3000;
-  app.listen(port, () => {
-    console.log(`D20 system is running on port ${port}`);
-  });
+    // Send a response back to the frontend (for example, a success message)
+    res.status(200).json({ message: "Form data received and processed successfully" });
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).json({ error: "An error occurred while processing the form data" });
+  }
+});
+
+// Start the Express app and listen on the specified port
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`D20 system is running on port ${port}`);
 });
