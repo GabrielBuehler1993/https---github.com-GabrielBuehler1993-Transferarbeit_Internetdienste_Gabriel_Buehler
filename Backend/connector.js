@@ -107,6 +107,8 @@ const postOrder = async (e) => {
   } catch (error) {
     console.error("Error:", error);
   }
+  console.log('Form submitted') 
+
 };
 
 // Event listener for DOMContentLoaded to set up form handling

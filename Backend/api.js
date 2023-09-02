@@ -23,9 +23,6 @@ mongoose.createConnection(buyDBConnection, {
   useUnifiedTopology: true,
 });
 
-
-
-
 // Define a schema for user data
 const UserSchema = new mongoose.Schema({
   id: Number,
@@ -51,8 +48,6 @@ const buyFormSchema = new mongoose.Schema({
 const User = mongoose.model("User", UserSchema, 'userCollection');
 const BuyForm = mongoose.model("BuyForm", buyFormSchema, 'buyFormCollection');
 
-
-
 // Enable JSON parsing middleware for incoming requests
 app.use(express.json());
 
@@ -74,52 +69,31 @@ app.get("/users", async (req, res) => {
   return res.json(allUsers);
 });
 
-// Get a specific user by ID
-app.get("/users/:id", async (req, res) => {
-  const id = parseInt(req.params.id);
-  const foundUser = await User.findOne({ id });
-  if (!foundUser) {
-    return res.status(404).send();
-  }
-  return res.json(foundUser);
-});
+// ... other routes ...
 
-// Create a new user
-app.post("/users", async (req, res) => {
-  const newUser = new User({ ...req.body });
-  await newUser.save();
-  return res.status(201).send();
-});
+// Insert test data inside an async function
+async function insertTestData() {
+  // Insert a test user
+  
+  // Insert a test buy form
+  const testBuyForm = new BuyForm({
+    id: 1,
+    Email: "test@example.com",
+    Address: "456 Elm St",
+    City: "Los Angeles",
+    State: "CA",
+    Zip: "12345",
+    Country: "USA",
+    Selection: "Test selection",
+  });
+  await testBuyForm.save();
+}
 
-// Update an existing user by ID
-app.put("/users/:id", async (req, res) => {
-  const id = parseInt(req.params.id);
-  await User.updateOne({ id }, req.body);
-  return res.status(200).send();
-});
-
-// Delete a user by ID
-app.delete("/users/:id", async (req, res) => {
-  const id = parseInt(req.params.id);
-  await User.findOne({ id }).deleteOne();
-  return res.status(204).send();
-});
-
-// Handle data from the buy form
-app.post("/buyForm_data", async (req, res) => {
-    // Log the request body to see if data is received
-    console.log("Received data:", req.body);
-  // Handle the data from the buy form here
-  const formData = req.body;
-  // Process and save the data as needed
-  // Respond with an appropriate status code
-  return res.status(200).send("Data received successfully");
-});
-
-// Define the port to listen on, using an environment variable or defaulting to 3000
-const port = process.env.PORT || 3000;
-
-// Start the Express app and listen on the specified port
-app.listen(port, () => {
-  console.log(`D20 system is running on port ${port}`);
+// Insert test data when the application starts
+insertTestData().then(() => {
+  // Start the Express app and listen on the specified port
+  const port = process.env.PORT || 3000;
+  app.listen(port, () => {
+    console.log(`D20 system is running on port ${port}`);
+  });
 });
