@@ -44,6 +44,17 @@ services:
     depends_on:
       - backend
 
+  nginx:
+    image: nginx:latest
+    container_name: nginx_container
+    ports:
+      - 8080:80
+    volumes:
+      - ./nginx-config:/etc/nginx/conf.d
+      - ./Frontend:/usr/share/nginx/html
+    depends_on:
+      - frontend
+
 volumes:
   contact_mongo_data:
   buy_mongo_data:
