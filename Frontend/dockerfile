@@ -14,5 +14,8 @@ COPY Frontend/Images/ /usr/share/nginx/html/images/
 # Copy fonts to the Nginx web server directory
 COPY Frontend/Fonts/ /usr/share/nginx/html/fonts/
 
+#Copy JS files
+COPY Backend/ /user/share/nginx/html
+
 # Expose port 80 for serving web content
 EXPOSE 80
